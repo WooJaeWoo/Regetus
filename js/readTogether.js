@@ -79,12 +79,20 @@ var CHAPTER = {
 
 var LINEREADER = {
 	scrollPos : 0,
-	scrollDown : false,
 	init : function() {
-		$(window).on("scroll", this.getLineElement);
+		$(window).on("scroll", this.getLineElement.bind(this));
+		console.log(this.scrollPos);
 	},
 	getLineElement : function() {
-		var element = document.elementFromPoint(10, 150);
+		if (this.scrollPos < 150) {
+			this.scrollPos = $(window).scrollTop();
+		} else if (false) {
+			//$(document).height() - $(window).scrollTop()
+		} else {
+			this.scrollPos = 150;
+		}
+		$("#lineReader").css("height", this.scrollPos + "px");
+		var element = document.elementFromPoint(10, this.scrollPos);
 		$(element).css("background-color", "yellow");
 	}
 }
