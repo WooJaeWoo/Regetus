@@ -1,0 +1,12 @@
+#lineReader {
+	position: fixed;
+	width: 100%;
+	height: 150px;
+	background-color: aqua;
+	opacity: 0.3;
+}
+
+#verses {
+	position: relative;
+	padding: 0 5%;
+}
