@@ -1,4 +1,4 @@
-// DEBUG=Regetus:* npm start
+// sudo DEBUG=Regetus:* npm start
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var setting = require('./routes/setting');
-var bp = require('./routes/bibleParser');
 
 var app = express();
 
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/setting', setting);
-app.use('/bp', bp);
 
 
 // catch 404 and forward to error handler
