@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%- include('common/head') %>
+	<%- include('../common/head') %>
 </head>
 <body>
 	<div id="main">
-
-
+		<div>
+			<span>그룹이름</span><input type="text">
+		</div>
+		<div>
+			<span>그룹이미지</span><input type="file" accept="image/*" capture="camera">
+		</div>
+		<a href="/group/group1"><button type="button">완료</button></a>
 
 	</div>
-	<%- include('common/footer') %>
+	<%- include('../common/footer') %>
 </body>
 </html>
