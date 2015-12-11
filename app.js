@@ -6,11 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var main = require('./routes/main');
-var users = require('./routes/users');
+var user = require('./routes/user');
 var group = require('./routes/group');
-var read = require('./routes/read');
-var setting = require('./routes/setting');
+var read = require('./routes/api/read');
 
 var app = express();
 
@@ -28,11 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // matching router
 app.use('/', index);
-app.use('/main', main);
-app.use('/users', users);
+app.use('/user', user);
 app.use('/group', group);
 app.use('/read', read);
-app.use('/setting', setting);
 
 
 // catch 404 and forward to error handler
@@ -54,11 +50,11 @@ if (app.get('env') === 'development') {
 }
 
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+	res.status(err.status || 500);
+	res.render('error', {
+		message: err.message,
+		error: {}
+	});
 });
 
 
