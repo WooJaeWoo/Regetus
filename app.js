@@ -1,4 +1,3 @@
-// sudo DEBUG=Regetus:* npm start
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,7 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var main = require('./routes/main');
 var users = require('./routes/users');
+var group = require('./routes/group');
+var read = require('./routes/read');
 var setting = require('./routes/setting');
 
 var app = express();
@@ -26,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // matching router
 app.use('/', index);
+app.use('/main', main);
 app.use('/users', users);
+app.use('/group', group);
+app.use('/read', read);
 app.use('/setting', setting);
 
 
@@ -36,7 +41,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handlers
 if (app.get('env') === 'development') {
