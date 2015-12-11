@@ -5,26 +5,27 @@
 </head>
 <body>
 	<div id="main">
-		<a id="kakao-login-btn"></a>
 
+		<a href="/main"><button type="button">카카오톡 로그인</button></a>
+		<a href="/about"><button type="button">Regetus??</button></a>
+		<!--<a id="kakao-login-btn"></a>-->
+		
 		<script>
-		  // 사용할 앱의 JavaScript 키를 설정해 주세요.
-		  Kakao.init('e11cd6342ece6f3dd5582070fb3a8f3b');
-
-		  // 카카오 로그인 버튼을 생성합니다.
-		  Kakao.Auth.createLoginButton({
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		/*Kakao.init('e11cd6342ece6f3dd5582070fb3a8f3b');
+		// 카카오 로그인 버튼을 생성합니다.
+		Kakao.Auth.createLoginButton({
 			container: '#kakao-login-btn',
 			success: function(authObj) {
-			  alert(JSON.stringify(authObj));
+				alert(JSON.stringify(authObj));
 			},
 			fail: function(err) {
-			  alert(JSON.stringify(err))
+				alert(JSON.stringify(err))
 			}
-		  });
+		});*/
 		</script>
 	</div>
 
 	<%- include('common/footer') %>
-	<script type="text/javascript" src="js/readTogether.js"></script>
 </body>
 </html>
