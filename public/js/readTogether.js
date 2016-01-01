@@ -72,32 +72,11 @@ var UTIL = {
 };
 
 var CHAPTER = {
-	init : function() {
-		LINEREADER.init();
-	}
 }
 
 var LINEREADER = {
-	scrollPos : 0,
-	init : function() {
-		$(window).on("scroll", this.getLineElement.bind(this));
-		console.log(this.scrollPos);
-	},
-	getLineElement : function() {
-		if (this.scrollPos < 150) {
-			this.scrollPos = $(window).scrollTop();
-		} else if (false) {
-			//$(document).height() - $(window).scrollTop()
-		} else {
-			this.scrollPos = 150;
-		}
-		$("#lineReader").css("height", this.scrollPos + "px");
-		var element = document.elementFromPoint(10, this.scrollPos);
-		$(element).css("background-color", "yellow");
-	}
 }
 
 //Service Code
 $(document).on("ready", function() {
-	CHAPTER.init();
 });

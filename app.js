@@ -57,5 +57,11 @@ app.use(function(err, req, res, next) {
 	});
 });
 
+process.on('SIGINT', function() {
+	console.log("\nServer is dead!");
+	process.exit();
+});
 
 module.exports = app;
+
+
